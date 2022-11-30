@@ -1,1 +1,256 @@
-Hello World
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 { color: #000000; }
+h1 { font-size: 28px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+h5 {
+	font-size: 14px;
+	margin: 0px;
+}
+
+.num { color: #cfd8dc; }
+
+.illustration {
+	color: #62727b;
+	font-size: 14px;
+	text-align: center;
+	margin: 0px;
+	font-style: oblique;
+}
+
+.content {
+	max-width: 975px;
+	margin: auto;
+}
+
+/* full width container */
+.grid-container {
+	position: relative;
+	left: -38px; /* 75px / 2 */
+	display: grid;
+	grid-template-columns: 75px 900px;
+	gap: 0px;
+	padding: 0px;
+}
+
+.grid-container > div {
+	text-align: left;
+	padding: 0px 0;
+}
+
+/* 1:1 container */
+.grid-container-1-1 {
+	display: grid;
+	grid-template-columns: 425px 425px;
+	gap: 50px;
+	padding: 0px;
+}
+
+.grid-container-1-1 > div {
+	text-align: left;
+	padding: 0px 0;
+}
+
+/* 1:2 container */
+.grid-container-1-2 {
+	display: grid;
+	grid-template-columns: 275px 575px;
+	gap: 50px;
+	padding: 0px;
+}
+
+.grid-container-1-2 > div {
+	text-align: left;
+	padding: 0px 0;
+}
+
+</style>
+
+<!-- DOCUMENT CAPTION -->
+
+<body lang="en">
+<div class="content">
+<div class="grid-container">
+
+<!-- DOCUMENT BEGIN -->
+
+<div> <!-- para -->
+</div>
+<div>
+<h1>NOTES AROUND</h1>
+<h2>1.1 APPENDIX</h2>
+<h3>1.1.1 About me</h3>
+<h4>1.1.1.1 To see is to be</h4>
+<h5>30 november 2022</h5>
+</div>
+
+<div><p class="num">1</p></div>
+<div><p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor metus nec 
+nisi congue fermentum. Aliquam eu efficitur urna. Nunc vitae risus sodales, 
+tempor dolor in, interdum purus. Aliquam erat volutpat. Curabitur id gravida 
+nulla, eu consequat ex. Donec id nisl a tortor pellentesque auctor. Fusce 
+pellentesque nisi posuere nulla pulvinar, sed iaculis diam eleifend. Fusce vel 
+gravida turpis. Proin aliquam molestie placerat. Integer ac massa metus. Nunc 
+commodo odio metus, non consectetur felis scelerisque nec. Morbi eu nisi a risus 
+commodo consectetur et at est. Donec ipsum elit, laoreet a iaculis et, laoreet 
+eget odio.
+</p></div>
+
+<div><p class="num">2</p></div>
+<div><p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor metus nec 
+nisi congue fermentum. Aliquam eu efficitur urna. Nunc vitae risus sodales, 
+tempor dolor in, interdum purus. Aliquam erat volutpat. Curabitur id gravida 
+nulla, eu consequat ex. Donec id nisl a tortor pellentesque auctor. Fusce 
+pellentesque nisi posuere nulla pulvinar, sed iaculis diam eleifend. Fusce vel 
+gravida turpis. Proin aliquam molestie placerat. Integer ac massa metus. Nunc 
+commodo odio metus, non consectetur felis scelerisque nec. Morbi eu nisi a risus 
+commodo consectetur et at est. Donec ipsum elit, laoreet a iaculis et, laoreet 
+eget odio.
+</p></div>
+
+<div><p class="num">-</p></div>
+<div><p class="illustration">
+<img width="900" src="./img/hi.png">
+Fig. 1
+</p></div>
+
+<div><p class="num">3</p></div>
+<div><p>
+Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
+новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
+соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
+мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
+особенности картины в целом, однако конкретные выводы, разумеется, 
+обнародованы.
+</p></div>
+
+<div><p class="num">4</p></div>
+<div><p>
+Взглянем на вот такой код:<br>
+<hr>
+<code>
+/* update the cached value in shared memory */<br>
+LWLockAcquire(CommitTsLock, LW_EXCLUSIVE);<br>
+commitTsShared-xidLastCommit = xid;<br>
+commitTsShared-dataLastCommit.time = timestamp;<br>
+commitTsShared-dataLastCommit.nodeid = nodeid;<br>
+<br>
+/* and move forwards our endpoint, if needed */<br>
+if (TransactionIdPrecedes(ShmemVariableCache-newestCommitTsXid, newestXact))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShmemVariableCache-newestCommitTsXid = newestXact;<br>
+LWLockRelease(CommitTsLock);<br>
+</code>
+<hr>
+</p></div>
+
+<div><p class="num">5</p></div>
+<div>
+
+<div class="grid-container-1-1">
+<div><p>
+Некое равно: нас этот равно: восхваляющих возникают примером обстоятельства, 
+упрекнуть говорил такого великие возникают когда раскрою избегал страдания. 
+Назвал действительно никакого перед чтобы наслаждений истину умеет и счастливой 
+из физическими всю такого. Чтобы из-за презирает наслаждению, разъясню и этот 
+умеет за того, иной не нас. Потому возникают какими избегает из никакого жизни 
+вами такого перед но равно боль некое. Порицающих раз и - никаких истину, откуда 
+стремящегося вы справедливости, избегал наслаждение счастливой - тех упражнениями 
+и по из постигают ни превратное которое откуда никто чтобы. Само тех упрекнуть 
+такого - как восхваляющих - возникает заниматься страдание за пользы открывший 
+то страдания физическими заниматься, боль само умеет стал которое eсли из-за 
+предаваться. Превратное, когда представление зодчим постигают кто такие поняли: 
+раскрою немалое пользы презирает такого из ни. Людей вами, всю страдание 
+возлюбил умеет собой обстоятельства физическими именно, физическими примером 
+приносило избегал, поняли ни истину упрекнуть разумно упрекнуть само - 
+наслаждения великие боль.
+</p></div>
+
+<div><p>
+Немалое за нет которого какими из-за представление разумно, перед избегает некое 
+неприятностей. Кто само зодчим ни говорил, истину упрекнуть которого 
+восхваляющих, превратное жизни порицающих стал приносило зодчим тягостными раз 
+приносило, я презирает превратное откуда превратное, перед. Если возлюбил 
+пользы тех само что, из-за умеет - раскрою равно никаких возлюбил. Из раз 
+открывший упражнениями только превратное порицающих такого великие простейшим. 
+Некоей воспользоваться картину равно наслаждений какими боль избегает когда само 
+приносило нас никто умеет, боль. Презирает простейшим мог представление 
+тягостными собой вы когда: действительно а само раскрою великие вами, этот 
+пользы.
+</p></div>
+</div> <!-- /grid-container-1-1 -->
+
+</div>
+
+<div><p class="num">6</p></div>
+<div><p>
+Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
+новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
+соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
+мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
+особенности картины в целом, однако конкретные выводы, разумеется, 
+обнародованы.
+</p></div>
+
+<div><p class="num">7</p></div>
+<div>
+
+<div class="grid-container-1-2">
+<div>
+<p class="illustration">
+<img width="275" src="./img/fig1.png">
+Fig. 2
+</p>
+</div>
+<div><p>
+Немалое за нет которого какими из-за представление разумно, перед избегает некое 
+неприятностей. Кто само зодчим ни говорил, истину упрекнуть которого 
+восхваляющих, превратное жизни порицающих стал приносило зодчим тягостными раз 
+приносило, я презирает превратное откуда превратное, перед. Если возлюбил 
+пользы тех само что, из-за умеет - раскрою равно никаких возлюбил. Из раз 
+открывший упражнениями только превратное порицающих такого великие простейшим. 
+Некоей воспользоваться картину равно наслаждений какими боль избегает когда само 
+приносило нас никто умеет, боль. Презирает простейшим мог представление 
+тягостными собой вы когда: действительно а само раскрою великие вами, этот 
+пользы.
+</p></div>
+</div> <!-- /grid-container-1-2 -->
+
+</div>
+
+<div><p class="num">8</p></div>
+<div><p>
+Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
+новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
+соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
+мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
+особенности картины в целом, однако конкретные выводы, разумеется, 
+обнародованы.
+</p></div>
+
+<!-- DOCUMENT END -->
+</div> <!-- /grid-container -->
+</div> <!-- /content -->
+
+</body>
+</html>
+
