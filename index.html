@@ -1,256 +1,292 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Online HTML Editor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
-<style>
+    <style>
+        html,
+        body {
+            /*font-family: 'Nunito Sans', sans-serif;*/
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #413c58;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
 
-body {
-	display: flex;
-	flex-direction: column;
-	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
-	line-height: 1.5;
-}
+        p {
+            text-align: justify;
+            padding-bottom: 1.5ex;
+        }
 
-h1, h2, h3, h4, h5 { color: #000000; }
-h1 { font-size: 28px; }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; }
-h4 { font-size: 16px; }
-h5 {
-	font-size: 14px;
-	margin: 0px;
-}
+        h1 {
+            margin: 0;
+        }
 
-.num { color: #cfd8dc; }
+        h2 {
+            margin: 0;
+        }
 
-.illustration {
-	color: #62727b;
-	font-size: 14px;
-	text-align: center;
-	margin: 0px;
-	font-style: oblique;
-}
+        h5 {
+            margin: 0;
+        }
 
-.content {
-	max-width: 975px;
-	margin: auto;
-}
+        h1.doc-logo1 {
+            color: #413c58;
+            font-size: 82px;
+            float: right;
+        }
 
-/* full width container */
-.grid-container {
-	position: relative;
-	left: -38px; /* 75px / 2 */
-	display: grid;
-	grid-template-columns: 75px 900px;
-	gap: 0px;
-	padding: 0px;
-}
+        h2.doc-logo2 {
+            color: #413c58;
+            font-size: 32px;
+            margin-top: -20px;
+            padding-right: 6px;
+            float: right
+        }
 
-.grid-container > div {
-	text-align: left;
-	padding: 0px 0;
-}
+        h2.small {
+            color: #413c58;
+            font-size: 12px;
+            line-height: 1;
+            /*font-style: oblique 10deg;*/
+        }
 
-/* 1:1 container */
-.grid-container-1-1 {
-	display: grid;
-	grid-template-columns: 425px 425px;
-	gap: 50px;
-	padding: 0px;
-}
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
 
-.grid-container-1-1 > div {
-	text-align: left;
-	padding: 0px 0;
-}
+        .document {
+            max-width: 975px;
+            min-width: 975px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* 1:2 container */
-.grid-container-1-2 {
-	display: grid;
-	grid-template-columns: 275px 575px;
-	gap: 50px;
-	padding: 0px;
-}
+        .page {
+            max-width: 900px;
+            min-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            flex: 1;
+        }
 
-.grid-container-1-2 > div {
-	text-align: left;
-	padding: 0px 0;
-}
+        .header {
+            background-color: #A3C4BC;
+            height: 24px;
+            margin: auto;
+            width: 975px;
+        }
 
-</style>
+        .caption {
+            background-color: #f2dda4;
+            height: 172px;
+            padding-right: 80px;
+        }
 
-<!-- DOCUMENT CAPTION -->
+        .footer {
+            height: 14px;
+        }
 
-<body lang="en">
-<div class="content">
-<div class="grid-container">
+        .table {
+            display: table;
+            width: 900px;
+            table-layout: fixed;
+            margin: auto;
+            padding: 6px;
+        }
 
-<!-- DOCUMENT BEGIN -->
+        .table_row {
+            display: table-row;
+        }
 
-<div> <!-- para -->
-</div>
-<div>
-<h1>NOTES AROUND</h1>
-<h2>1.1 APPENDIX</h2>
-<h3>1.1.1 About me</h3>
-<h4>1.1.1.1 To see is to be</h4>
-<h5>30 november 2022</h5>
-</div>
+        .table_cell {
+            border: 0px solid;
+            display: table-cell;
+            text-align: center;
+        }
 
-<div><p class="num">1</p></div>
-<div><p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor metus nec 
-nisi congue fermentum. Aliquam eu efficitur urna. Nunc vitae risus sodales, 
-tempor dolor in, interdum purus. Aliquam erat volutpat. Curabitur id gravida 
-nulla, eu consequat ex. Donec id nisl a tortor pellentesque auctor. Fusce 
-pellentesque nisi posuere nulla pulvinar, sed iaculis diam eleifend. Fusce vel 
-gravida turpis. Proin aliquam molestie placerat. Integer ac massa metus. Nunc 
-commodo odio metus, non consectetur felis scelerisque nec. Morbi eu nisi a risus 
-commodo consectetur et at est. Donec ipsum elit, laoreet a iaculis et, laoreet 
-eget odio.
-</p></div>
+        .table_body {
+            display: table-row-group;
+        }
 
-<div><p class="num">2</p></div>
-<div><p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor metus nec 
-nisi congue fermentum. Aliquam eu efficitur urna. Nunc vitae risus sodales, 
-tempor dolor in, interdum purus. Aliquam erat volutpat. Curabitur id gravida 
-nulla, eu consequat ex. Donec id nisl a tortor pellentesque auctor. Fusce 
-pellentesque nisi posuere nulla pulvinar, sed iaculis diam eleifend. Fusce vel 
-gravida turpis. Proin aliquam molestie placerat. Integer ac massa metus. Nunc 
-commodo odio metus, non consectetur felis scelerisque nec. Morbi eu nisi a risus 
-commodo consectetur et at est. Donec ipsum elit, laoreet a iaculis et, laoreet 
-eget odio.
-</p></div>
+        .border {
+            border: 1px solid;
+        }
 
-<div><p class="num">-</p></div>
-<div><p class="illustration">
-<img width="900" src="./img/hi.png">
-Fig. 1
-</p></div>
+        .op {
+            opacity: 0.5;
+        }
 
-<div><p class="num">3</p></div>
-<div><p>
-Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
-новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
-соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
-мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
-особенности картины в целом, однако конкретные выводы, разумеется, 
-обнародованы.
-</p></div>
+        a {
+            color: #413c58;
+        }
 
-<div><p class="num">4</p></div>
-<div><p>
-Взглянем на вот такой код:<br>
-<hr>
-<code>
-/* update the cached value in shared memory */<br>
-LWLockAcquire(CommitTsLock, LW_EXCLUSIVE);<br>
-commitTsShared-xidLastCommit = xid;<br>
-commitTsShared-dataLastCommit.time = timestamp;<br>
-commitTsShared-dataLastCommit.nodeid = nodeid;<br>
-<br>
-/* and move forwards our endpoint, if needed */<br>
-if (TransactionIdPrecedes(ShmemVariableCache-newestCommitTsXid, newestXact))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ShmemVariableCache-newestCommitTsXid = newestXact;<br>
-LWLockRelease(CommitTsLock);<br>
-</code>
-<hr>
-</p></div>
+        pre code {
+            font-family: 'PT Mono', monospace;
+            font-size: 14px;
+            background-color: #FFF;
+            border: 1px dotted #413c58;
+            display: block;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+        }
 
-<div><p class="num">5</p></div>
-<div>
+        .codeblock1 {}
 
-<div class="grid-container-1-1">
-<div><p>
-Некое равно: нас этот равно: восхваляющих возникают примером обстоятельства, 
-упрекнуть говорил такого великие возникают когда раскрою избегал страдания. 
-Назвал действительно никакого перед чтобы наслаждений истину умеет и счастливой 
-из физическими всю такого. Чтобы из-за презирает наслаждению, разъясню и этот 
-умеет за того, иной не нас. Потому возникают какими избегает из никакого жизни 
-вами такого перед но равно боль некое. Порицающих раз и - никаких истину, откуда 
-стремящегося вы справедливости, избегал наслаждение счастливой - тех упражнениями 
-и по из постигают ни превратное которое откуда никто чтобы. Само тех упрекнуть 
-такого - как восхваляющих - возникает заниматься страдание за пользы открывший 
-то страдания физическими заниматься, боль само умеет стал которое eсли из-за 
-предаваться. Превратное, когда представление зодчим постигают кто такие поняли: 
-раскрою немалое пользы презирает такого из ни. Людей вами, всю страдание 
-возлюбил умеет собой обстоятельства физическими именно, физическими примером 
-приносило избегал, поняли ни истину упрекнуть разумно упрекнуть само - 
-наслаждения великие боль.
-</p></div>
+        .codeblock2 {
+            font-family: 'PT Mono', monospace;
+            font-size: 14px;
+            border: 0px solid #413c58;
+            /*margin-top: 10px;*/
+        }
+    </style>
+</head>
 
-<div><p>
-Немалое за нет которого какими из-за представление разумно, перед избегает некое 
-неприятностей. Кто само зодчим ни говорил, истину упрекнуть которого 
-восхваляющих, превратное жизни порицающих стал приносило зодчим тягостными раз 
-приносило, я презирает превратное откуда превратное, перед. Если возлюбил 
-пользы тех само что, из-за умеет - раскрою равно никаких возлюбил. Из раз 
-открывший упражнениями только превратное порицающих такого великие простейшим. 
-Некоей воспользоваться картину равно наслаждений какими боль избегает когда само 
-приносило нас никто умеет, боль. Презирает простейшим мог представление 
-тягостными собой вы когда: действительно а само раскрою великие вами, этот 
-пользы.
-</p></div>
-</div> <!-- /grid-container-1-1 -->
+<body>
+    <div class="header">
+        <div class="table">
+            <div class="table_body">
+                <div class="table_row">
+                    <div class="table_cell">
+                        <h2 class="small">Home</h2>
+                    </div>
 
-</div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
+                    <div class="table_cell">
+                        <h2 class="small"></h2>
+                    </div>
 
-<div><p class="num">6</p></div>
-<div><p>
-Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
-новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
-соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
-мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
-особенности картины в целом, однако конкретные выводы, разумеется, 
-обнародованы.
-</p></div>
+                    <div class="table_cell">
+                        <h2 class="small">About</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div><p class="num">7</p></div>
-<div>
+    <div class="content">
+        <div class="document">
+            <div class="caption">
+                <h1 class="doc-logo1">Notes on Everything</h1>
+                <h2 class="doc-logo2">by Max Orlov</h2>
+            </div>
 
-<div class="grid-container-1-2">
-<div>
-<p class="illustration">
-<img width="275" src="./img/fig1.png">
-Fig. 2
-</p>
-</div>
-<div><p>
-Немалое за нет которого какими из-за представление разумно, перед избегает некое 
-неприятностей. Кто само зодчим ни говорил, истину упрекнуть которого 
-восхваляющих, превратное жизни порицающих стал приносило зодчим тягостными раз 
-приносило, я презирает превратное откуда превратное, перед. Если возлюбил 
-пользы тех само что, из-за умеет - раскрою равно никаких возлюбил. Из раз 
-открывший упражнениями только превратное порицающих такого великие простейшим. 
-Некоей воспользоваться картину равно наслаждений какими боль избегает когда само 
-приносило нас никто умеет, боль. Презирает простейшим мог представление 
-тягостными собой вы когда: действительно а само раскрою великие вами, этот 
-пользы.
-</p></div>
-</div> <!-- /grid-container-1-2 -->
+            <div class="page">
+                <!-- Document begin -->
+                <!--Top record-->
+                <br>
+                <h2>Lorem ipsum in Postgres</h2>
+                <h5>On 2 dec 2022</h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec facilisis ligula. Etiam eget luctus mi. Phasellus sed euismod nibh, ac feugiat est. Ut bibendum nec sapien a laoreet. Cras lacus dolor, imperdiet non justo a, bibendum tincidunt enim. Donec augue diam, dapibus sit amet pretium et, vehicula in dui. Praesent nunc libero, pharetra nec lacinia at, condimentum eget lorem. Aliquam ut arcu eu velit accumsan auctor a malesuada tellus. Cras sit amet mi et augue ullamcorper malesuada ut eu lectus. Nulla facilisi. Etiam feugiat lacus sed hendrerit tincidunt.
+                </p>
+                <pre>
+<code class="codeblock1">Листинг №1:<code class="codeblock2">
+len += offsetof(HeapTupleHeaderData, t_bits);
+hoff = len = MAXALIGN(len); /* align user data safely */
+len += targetDataLen;
 
-</div>
+*targetHeapTuple = (HeapTuple) palloc0(HEAPTUPLESIZE + len);
+(*targetHeapTuple)-&gt;t_data
+    = targetTHeader
+	= (HeapTupleHeader) ((char *) *targetHeapTuple + HEAPTUPLESIZE);
+(*targetHeapTuple)-&gt;t_len = len;
+(*targetHeapTuple)-&gt;t_tableOid = sourceTuple-&gt;t_tableOid;
+(*targetHeapTuple)-&gt;t_self = sourceTuple-&gt;t_self;
 
-<div><p class="num">8</p></div>
-<div><p>
-Как принято считать, <b>ключевые</b> особенности <i>структуры</i> проекта призывают нас к 
-новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены 
-соответствующими инстанциями. В своём стремлении улучшить пользовательский опыт 
-мы упускаем, что предприниматели в сети интернет освещают чрезвычайно интересные 
-особенности картины в целом, однако конкретные выводы, разумеется, 
-обнародованы.
-</p></div>
+targetTHeader-&gt;t_infomask = sourceTHeader-&gt;t_infomask;
+targetTHeader-&gt;t_hoff = hoff;
+HeapTupleHeaderSetNatts(targetTHeader, natts);
+HeapTupleHeaderSetDatumLength(targetTHeader, len);
+HeapTupleHeaderSetTypeId(targetTHeader, tupleDesc-&gt;tdtypeid);
+HeapTupleHeaderSetTypMod(targetTHeader, tupleDesc-&gt;tdtypmod);
+</code></code></pre>
+                <p>Примерно вот так это и выглядит.</p>
+                <a href="./note-002.html">Read more...</a>
 
-<!-- DOCUMENT END -->
-</div> <!-- /grid-container -->
-</div> <!-- /content -->
+                <!-- Next record -->
+                <br><br><br>
+                <h2>Кое–что о Linux</h2>
+                <h5>On 1 dec 2022</h5>
+                <p>
+                    Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32 Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec facilisis ligula. Etiam eget luctus mi. Phasellus sed euismod nibh, ac feugiat est. Ut bibendum nec sapien a laoreet. Cras lacus dolor, imperdiet non justo a, bibendum tincidunt enim. Donec augue diam, dapibus sit amet pretium et, vehicula in dui. Praesent nunc libero, pharetra nec lacinia at, condimentum eget lorem. Aliquam ut arcu eu velit accumsan auctor a malesuada tellus. Cras sit amet mi et augue ullamcorper malesuada ut eu lectus. Nulla facilisi. Etiam feugiat lacus sed hendrerit tincidunt.
+                </p>
+                <a href="url">Read more...</a>
+
+                <!-- Next record -->
+                <br><br><br>
+                <h2>Quisque congue gravida diam</h2>
+                <h5>On 20 nov 2022</h5>
+                <p>
+                    Aenean tristique lacinia metus, in rhoncus mauris tincidunt at. Integer ut dui sem. Aliquam dictum ante vitae ex facilisis luctus. Pellentesque ut leo et est sagittis pretium vitae vel tortor. Morbi ac tempor nibh. Sed ac convallis lectus. Quisque congue gravida diam.
+                </p>
+                <a href="url">Read more...</a>
+                <br><br><br>
+
+                <!-- Document end -->
+                <hr class="op">
+            </div>
+        </div>
+
+    </div>
+    <div class="footer op">
+        <div class="table">
+            <div class="table_body">
+                <div class="table_row">
+                    <div class="table_cell">
+                        <h2 class="small op">The contents of this website are Copyright© by Max Orlov and are licensed for use under CC BY-SA 3.0.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
-</html>
 
+</html>
