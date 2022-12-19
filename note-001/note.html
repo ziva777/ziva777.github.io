@@ -99,7 +99,7 @@ h5 {
 <div> <!-- para -->
 </div>
 <div>
-<h1>Устройство 64-битных идентификаторов транзакций в PostgrtesPro Enterprice</h1>
+<h1>Устройство 64-битных счётчиков транзакций в Postgrtes Pro Enterprice</h1>
 <h2>Введение</h2>
 </div>
 
@@ -303,7 +303,7 @@ Postgres в таких случаях становится довольно не
 <div><p class="num">20</p></div>
 <div><p>
 Прежде, чем приступить к особенностям реализации 64–х битных идентификаторов транзакций в СУБД Postgres Pro Enterprise, нужно разобраться в том, как хранит данные таблиц PostgreSQL.
-И только после этого можно будет через сравнение понять: в чем заключается отличие СУБД Postgres Pro от  Enterprise.
+И только после этого можно будет через сравнение понять: в чем заключается отличие СУБД Postgres от Postgres Pro Enterprise.
 Это изложение может показаться несколько длинным, но без него не будет понятно какую проблему мы решаем и почему выбрано именно такое решение.
 </p></div>
 
@@ -490,7 +490,7 @@ free_percent       | 2
 <div><p class="num"></p></div>
 <div>
 <img width="800" src="./img/06.svg">
-<p class="illustration">Рис. 4 – устройство страницы на диске в PostgresPro Enterprise</p></div>
+<p class="illustration">Рис. 4 – устройство страницы на диске в Postgres Pro Enterprise</p></div>
 
 <div><p class="num">33</p></div>
 <div><p>
@@ -586,7 +586,7 @@ postgres=# select * from page_header(get_raw_page('foo', 0));
 <div><p class="num"></p></div>
 <div>
 <img width="800" src="./img/07.svg">
-<p class="illustration">Рис. 4 – устройство страницы на диске в PostgresPro Enterprise</p></div>
+<p class="illustration">Рис. 4 – устройство страницы на диске в Postgres Pro Enterprise</p></div>
 
 <div><p class="num">37</p></div>
 <div><p>
@@ -612,7 +612,7 @@ postgres=# select * from page_header(get_raw_page('foo', 0));
 
 <div><p class="num">39</p></div>
 <div><p>
-PostgresPro Enterprise размещает на heap страницах (т.е. на страницах таблиц) специальную область, которая называется special.
+Postgres Pro Enterprise размещает на heap страницах (т.е. на страницах таблиц) специальную область, которая называется special.
 В ней находится дополнительная информация, называемой "базой", которая позволяет вычислить 64–х битные значения полей xmax и xmin для каждого из кортежей на странице.
 Это позволяет соблюсти баланс между увеличением размера хранимой информации и желанием получить 64–х битные транзакции.
 </p></div>
